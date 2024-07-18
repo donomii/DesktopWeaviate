@@ -3,17 +3,16 @@ export GO111MODULE=off
 git clone https://gitlab.com/donomii/weaviate-client
 # Web crawler and site ripper
 go get ./weaviate-client/ripper
-go build ./weaviate-client/ripper
+go build -o ripper.exe ./weaviate-client/ripper
 
 # Indexes a local directory
 echo Building files loader
 go get ./weaviate-client/files2weaviate
-go build ./weaviate-client/files2weaviate
-cp files2weaviate indexer.exe
+go build -o indexer.exe ./weaviate-client/files2weaviate
 
 echo building goloader
 go get ./weaviate-client/goloader
-go build ./weaviate-client/goloader
+go build -o goloader.exe ./weaviate-client/goloader
 
 
 # Build web front end
@@ -53,5 +52,6 @@ cd ..
 #cd ..
 
 rm -rf weaviate-client
-#rm -rf weaviate
+rm -rf weaviate
 rm -rf TagExplorer
+
