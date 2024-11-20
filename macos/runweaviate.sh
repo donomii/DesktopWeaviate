@@ -20,4 +20,7 @@ export GPT4ALL_INFERENCE_API="http://localhost:8010"
 export DISABLE_TELEMETRY=true # disable telemetry for local development
 export RAFT_BOOTSTRAP_EXPECT=1
 
+# use longer trigram vectors
+export BIGRAM=trigram
+
 ./weaviate-server --scheme http  --host "127.0.0.1" --port 8080 --read-timeout=600s --write-timeout=600s
